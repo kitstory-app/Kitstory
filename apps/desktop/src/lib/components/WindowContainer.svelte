@@ -14,6 +14,7 @@
     PanelRight,
     PanelLeftDashed,
   } from "@lucide/svelte";
+  import { sidebarToggle } from "@kitstory/shared/context";
 
   interface Props {
     children: Snippet;
@@ -27,6 +28,8 @@
   let restoreButton: HTMLButtonElement;
   let maximizeButton: HTMLButtonElement;
   let minmizeButton: HTMLButtonElement;
+
+  const globalSidebar = sidebarToggle.get();
 
   onMount(() => {
     const w = getCurrentWindow();
@@ -56,9 +59,7 @@
   class="grid grid-rows-[auto_1fr] h-[100dvh] overflow-hidden"
 >
   <div id="title-bar" class="h-10 flex items-center gap-x-0.5 overflow-hidden">
-    <div
-      class="h-full relative select-none shrink-0 flex items-center gap-x-2"
-    >
+    <div class="h-full relative select-none shrink-0 flex items-center gap-x-2">
       <div class="inline-flex items-center">
         <button
           class="p-2 h-full inline-flex items-center cursor-pointer hover:bg-neutral-500/40 rounded-md"
@@ -71,6 +72,7 @@
           </div>
         </button>
         <button
+          onclick={() => globalSidebar.set(!$globalSidebar)}
           class="p-2 h-full place-items-center cursor-pointer hover:bg-neutral-500/40 rounded-md"
         >
           <PanelLeftDashed size={18} />

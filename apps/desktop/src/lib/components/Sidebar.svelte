@@ -4,7 +4,6 @@
   import MenuHeadingGroup from "@kitstory/ui/components/MenuHeadingGroup.svelte";
 
   import {
-    SettingsIcon,
     UsersRoundIcon,
     ZapIcon,
     HouseIcon,
@@ -15,7 +14,6 @@
     Plug2Icon,
     LibraryBigIcon,
     TagsIcon,
-    ChevronRight,
     CloudOffIcon,
     ChevronRightIcon,
     LayoutTemplateIcon,
@@ -24,7 +22,16 @@
     ScrollTextIcon,
     MapPinIcon,
     ShapesIcon,
+    ListOrderedIcon,
+    ChevronsUpDownIcon,
+    EllipsisIcon,
   } from "@lucide/svelte";
+  import { writable } from "svelte/store";
+  import { sidebarToggle } from "@kitstory/shared/context";
+
+  const sidebarVisible = writable(true);
+
+  sidebarToggle.set(sidebarVisible);
 </script>
 
 <aside
@@ -38,24 +45,39 @@
     >
       <div>
         <div
-          class="mx-0.5 border mb-2.5 mt-2 rounded-md bg-neutral-950 border-neutral-700 z-10"
+          id="project-context-switcher"
+          class="mx-0.5 border mb-2.5 mt-2 rounded-md bg-neutral-950 border-neutral-700 z-10 flex justify-between py-2.5 px-2"
         >
-          <button
-            class="grid grid-cols-[auto_1fr] items-center gap-x-2 grid-rows-2 text-left py-2 pl-2.5"
-          >
-            <div class="row-span-2 size-10 rounded-full bg-red-400"></div>
-            <span class="font-bold truncate">Project Name</span>
-            <div>
-              <CloudOffIcon size={16} class="inline-block align-middle" />
-              <span class="text-sm">Local only</span>
-              <ChevronRightIcon size={16} class="inline-block align-middle" />
+          <div class="flex flex-1 items-center gap-x-3 text-left">
+            <div class="row-span-2 size-12 rounded-md bg-red-400"></div>
+            <div class="flex flex-col gap-y-1.5">
+              <button class="flex items-center cursor-pointer">
+                <span class="leading-none font-bold truncate text-lg"
+                  >Project Name</span
+                >
+                <ChevronsUpDownIcon
+                  size={16}
+                  class="ml-1 opacity-75 inline-block align-middle"
+                />
+              </button>
+              <div class="opacity-75 inline-flex items-center">
+                <CloudOffIcon size={17} class="inline-block align-middle" />
+                <span class="text-sm ml-1">Local only</span>
+                <ChevronRightIcon size={16} class="inline-block align-middle" />
+              </div>
             </div>
+          </div>
+          <button class="px-1.5 hover:bg-white/25 rounded-md">
+            <EllipsisIcon size={20} />
           </button>
         </div>
         <MenuItem icon={HouseIcon}>Home</MenuItem>
         <MenuItem icon={Clock4Icon}>Recents</MenuItem>
         <MenuItem icon={ZapIcon}>Automation</MenuItem>
       </div>
+      <MenuHeadingGroup label="Pinned">
+        <MenuItem icon={TagsIcon}>lmao</MenuItem>
+      </MenuHeadingGroup>
       <MenuHeadingGroup label="Worldbuilding">
         <MenuItem icon={TagsIcon}>Drafts</MenuItem>
         <MenuItem icon={LayoutTemplateIcon}>Mood board</MenuItem>
@@ -82,24 +104,13 @@
       <MenuHeadingGroup label="Admin">
         <MenuItem icon={Plug2Icon}>Integrations</MenuItem>
         <MenuItem icon={UsersRoundIcon}>Members</MenuItem>
-        <MenuItem icon={UsersRoundIcon}>Audit logs</MenuItem>
+        <MenuItem icon={ListOrderedIcon}>Audit logs</MenuItem>
       </MenuHeadingGroup>
-      <!-- <div class="px-2.5">
-      <hr class="border-neutral-500">
-    </div>
-    <div>
-      <MenuItem icon={SettingsIcon}>
-        Advanced settings
-        {#snippet rightSlot()}
-          <ChevronRight size={19} class="mr-2" />
-        {/snippet}
-      </MenuItem>
-    </div> -->
     </nav>
   </div>
 
-  <!-- <nav class="w-(--g-sidebar-width) px-3.5 py-3 fixed bottom-0 bg-black">
-    <MenuItem icon={SettingsIcon}>Settings</MenuItem>
-  </nav> -->
-  <div id="resize-grip" class="bg-red-400 z-10 w-2 absolute inset-y-0 right-0"></div>
+  <div
+    id="resize-grip"
+    class="bg-red-400 z-10 w-2 absolute inset-y-0 right-0"
+  ></div>
 </aside>
