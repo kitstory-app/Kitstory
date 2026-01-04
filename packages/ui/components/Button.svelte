@@ -40,7 +40,7 @@
         },
         size: {
           small: !icon ? "px-2 py-1" : "p-1.5",
-          big: !icon ? "px-1.5 py-1" : "p-1",
+          big: !icon ? "px-2.5 py-1.5" : "p-1",
         },
       },
     },

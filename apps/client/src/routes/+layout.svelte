@@ -3,8 +3,9 @@
 
 	import interFont from "@fontsource/inter/files/inter-latin-400-normal.woff2?url";
 	import interFont700 from "@fontsource/inter/files/inter-latin-700-normal.woff2?url";
-	import Navbar from "$lib/components/Navbar.svelte";
+	import { Navbar } from "$lib/components/navbar";
 	import { pwaInfo } from "virtual:pwa-info";
+	import Footer from "$lib/components/Footer.svelte";
 
 	const { children } = $props();
 
@@ -31,13 +32,14 @@
 </svelte:head>
 
 <Navbar />
-<div id="wrapper" class="flex gap-x-4">
+<div id="wrapper" class="flex gap-x-4 mt-(--nav-padding-y)">
 	<!-- <aside class="shrink-0">sidebar</aside> -->
 	<div
-		class="flex-1 dark:bg-neutral-900 bg-white dark:border-neutral-800 h-[calc(theme(height.dvh)-calc(var(--nav-padding-y)*6.25))]"
+		class="flex-1 dark:bg-neutral-900 bg-white dark:border-neutral-800 selection:bg-amber-300 selection:text-black min-h-[calc(theme(height.dvh)-calc(var(--nav-padding-y))*1)]"
 	>
 		<main id="skip-content">
 			{@render children()}
 		</main>
 	</div>
 </div>
+<Footer />

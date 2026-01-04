@@ -7,7 +7,7 @@
     SearchIcon,
   } from "@lucide/svelte";
   import { Button } from "@kitstory/ui";
-  import Breadcrumbs from "./Breadcrumbs.svelte";
+  import Breadcrumbs from "../Breadcrumbs.svelte";
 </script>
 
 <nav class="flex items-center justify-between px-3 py-(--nav-padding-y)">
