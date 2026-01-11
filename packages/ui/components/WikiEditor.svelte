@@ -1,16 +1,19 @@
 <script lang="ts">
   import Button from "./Button.svelte";
-  import { ChevronDownIcon } from "@lucide/svelte";
+  import Combobox from "./Combobox.svelte";
+  import ComboboxButton from "./ComboboxButton.svelte";
+
+  type EditMode = "visual" | "source";
 
   interface Props {
-    editMode?: "visual" | "source";
+    editMode?: EditMode;
   }
 
   const { editMode: defaultEditMode = "visual" }: Props = $props();
 
-  let editMode = $state<Props["editMode"]>(defaultEditMode);
+  let editMode = $state<EditMode>(defaultEditMode);
 
-  const editModeMap: Record<Props["editMode"], string> = {
+  const editModeMap: Record<EditMode, string> = {
     source: "Source",
     visual: "Visual",
   };
@@ -29,10 +32,7 @@
       <Button variant="secondary">More</Button>
     </div>
     <!-- todo: dropdown options (source, visual, source/visual in split pane) -->
-    <Button variant="secondary">Visual</Button>
-    <Button icon variant="secondary">
-      <ChevronDownIcon />
-    </Button>
+    <ComboboxButton>{editModeMap[editMode]}</ComboboxButton>
   </section>
   <div id="work-section" class="flex-1 relative size-full" role="tabpanel">
     <textarea

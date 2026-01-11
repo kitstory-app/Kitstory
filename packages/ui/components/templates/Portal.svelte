@@ -1,5 +1,31 @@
 <script lang="ts">
-  // Client-side component
-  import { onMount } from "svelte"
-  import { browser } from "$app/environment"
+  import type { Snippet } from "svelte";
+
+  const moveDom = (node: Element, inject: string) => {
+    const target = document.querySelector(inject);
+    target?.appendChild(node);
+
+    return {
+      destroy() {
+        node.remove();
+      },
+    };
+  };
+
+  interface Props {
+    children?: Snippet;
+    focusGuard: boolean;
+  }
+
+  const { children, focusGuard }: Props = $props();
 </script>
+
+<div use:moveDom={"body"} data-portal="" class="contents">
+  {#if focusGuard}
+    <button data-focus-guard="" aria-hidden="true" class="sr-only"></button>
+  {/if}
+  {@render children?.()}
+  {#if focusGuard}
+    <button data-focus-guard="" aria-hidden="true" class="sr-only"></button>
+  {/if}
+</div>
