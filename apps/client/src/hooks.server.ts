@@ -2,9 +2,19 @@ import { redirect, type Handle } from "@sveltejs/kit"
 
 export const handle: Handle = async ({ event, resolve }) => {
   event.setHeaders({
-    "x-clacks-overhead": "GNU Terry Pratchett"
+    "x-clacks-overhead": "GNU Terry Pratchett",
   })
 
-  const res = await resolve(event)
-  return res
+  const isLoggedIn = event.cookies.get("is_loggedin") === "true"
+  const pathname = event.url.pathname
+
+  if ((pathname === "/" || pathname === "/login" || pathname === "/register") && isLoggedIn) {
+    throw redirect(301, "/dashboard")
+  }
+
+  if (pathname.startsWith("/dashboard") && !isLoggedIn) {
+    throw redirect(301, "/login")
+  }
+
+  return resolve(event)
 }

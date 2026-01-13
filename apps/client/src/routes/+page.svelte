@@ -1,9 +1,17 @@
 <script lang="ts">
   import Meta from "$lib/components/Meta.svelte";
   import { Button, Clamp } from "@kitstory/ui";
+  import type { LayoutData } from "./$types";
+  import { redirect } from "@sveltejs/kit";
+
+  const { isLoggedIn }: LayoutData = $props();
+
+  if (isLoggedIn) {
+    throw redirect(301, "/dashboard");
+  }
 </script>
 
-<Meta title="Home" />
+<Meta title="Kitstory - organize your OCs lol" />
 <div class="prose-headings:font-bold prose-h2:text-4xl">
   <header>
     <Clamp class="flex flex-col" larger>

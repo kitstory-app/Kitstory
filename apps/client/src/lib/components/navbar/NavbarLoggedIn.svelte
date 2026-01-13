@@ -10,13 +10,13 @@
   import Breadcrumbs from "../Breadcrumbs.svelte";
 </script>
 
-<nav class="flex items-center justify-between px-3 py-(--nav-padding-y)">
+<nav class="fixed top-0 inset-x-0 flex items-center justify-between px-3 h-(--nav-padding-y)">
   <!-- Left -->
   <div class="flex items-center gap-x-2.5 overflow-x-hidden">
-    <Button icon variant="secondary">
+    <Button icon variant="secondary" size="big">
       <MenuIcon size={19} />
     </Button>
-    <a href="/">Kitstory</a>
+    <a href="/dashboard">Kitstory</a>
     <Breadcrumbs />
   </div>
   <!-- Right -->
@@ -41,11 +41,5 @@
         class="size-6 rounded-full bg-green-500 relative before:absolute before:-inset-0.5 before:bg-blue-400 before:rounded-full before:-z-10"
       ></div>
     </button>
-    <Button>
-      {#snippet leftSlot()}
-        <CircleUserIcon size={19} />
-      {/snippet}
-      Login
-    </Button>
   </div>
 </nav>
