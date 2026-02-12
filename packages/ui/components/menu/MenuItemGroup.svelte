@@ -1,10 +1,10 @@
 <script lang="ts">
   import { ChevronDownIcon } from "@lucide/svelte";
   import MenuItem from "./MenuItem.svelte";
-  import type { SharedProps } from "./MenuItem.shared";
-  import { Collapser } from "./templates";
+  import type { MenuProps } from "./MenuItem.types";
+  import { Collapser } from "../templates";
 
-  interface Props extends SharedProps {
+  interface Props extends MenuProps {
     label: string;
     isCollapsed?: true;
   }

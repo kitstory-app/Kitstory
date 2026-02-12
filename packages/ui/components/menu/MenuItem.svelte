@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type { SharedProps } from "./MenuItem.shared";
+  import type { MenuProps } from "./MenuItem.types";
 
-  interface Props extends SharedProps {
+  interface Props extends MenuProps {
     as?: keyof HTMLElementTagNameMap;
   }
 

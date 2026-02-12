@@ -1,12 +1,12 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
   import type { HTMLButtonAttributes } from "svelte/elements";
+  import type { WithChildrenSnippet } from "../types";
+
   import { cva } from "class-variance-authority";
   import { twMerge } from "tailwind-merge";
 
   interface Props extends HTMLButtonAttributes {
-    children?: Snippet;
-
     leftSlot?: Snippet;
     rightSlot?: Snippet;
 
@@ -25,7 +25,7 @@
     leftSlot,
     rightSlot,
     ...others
-  }: Props = $props();
+  }: WithChildrenSnippet<Props> = $props();
 
   const button = cva(
     twMerge(

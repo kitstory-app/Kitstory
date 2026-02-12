@@ -1,11 +1,9 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import { Collapser } from "./templates";
+  import { Collapser } from "../templates";
+  import type { MenuProps } from "./MenuItem.types";
 
-  interface Props {
-    children?: Snippet;
-    rightSlot?: Snippet;
-    label: string;
+  interface Props extends MenuProps {
+    label?: string;
     // collapsible?: boolean;
     // isCollapsed?: true;
   }
@@ -13,7 +11,12 @@
   const { children, label, rightSlot }: Props = $props();
 </script>
 
-<Collapser id="menu-heading-group" role="group" class="space-y-1.5" state={true}>
+<Collapser
+  id="menu-heading-group"
+  role="group"
+  class="space-y-1.5"
+  state={true}
+>
   {#snippet heading()}
     <div>
       <h2 class="opacity-50 uppercase select-none px-2.5">{label}</h2>

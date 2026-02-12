@@ -1,8 +1,9 @@
 <script lang="ts">
-  import MenuItem from "@kitstory/ui/components/MenuItem.svelte";
-  import MenuItemGroup from "@kitstory/ui/components/MenuItemGroup.svelte";
-  import MenuHeadingGroup from "@kitstory/ui/components/MenuHeadingGroup.svelte";
-
+  import {
+    MenuItem,
+    MenuItemGroup,
+    MenuHeadingGroup,
+  } from "@kitstory/ui/components/menu";
   import {
     UsersRoundIcon,
     ZapIcon,
@@ -27,7 +28,7 @@
     EllipsisIcon,
   } from "@lucide/svelte";
   import { writable } from "svelte/store";
-  import { sidebarToggle } from "@kitstory/shared/context";
+  import { sidebarToggle } from "@kitstory/ui/context";
 
   const sidebarVisible = writable(true);
 

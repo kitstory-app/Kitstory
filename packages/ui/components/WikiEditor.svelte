@@ -1,7 +1,6 @@
 <script lang="ts">
   import Button from "./Button.svelte";
-  import Combobox from "./Combobox.svelte";
-  import ComboboxButton from "./ComboboxButton.svelte";
+  import { ComboboxButton } from "./combo-box";
 
   type EditMode = "visual" | "source";
 

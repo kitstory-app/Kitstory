@@ -1,15 +1,11 @@
 <script lang="ts">
-  import type { ComponentProps, Snippet } from "svelte";
-  import Button from "./Button.svelte";
+  import type { Snippet } from "svelte";
+  import type { PluckedButtonProps } from "./Combobox.types";
+  import Button from "../Button.svelte";
   import { ChevronDownIcon } from "@lucide/svelte";
   import { twMerge } from "tailwind-merge";
 
-  type PickedButtonProps = Pick<
-    ComponentProps<typeof Button>,
-    "variant" | "size" | "class"
-  >;
-
-  interface Props extends PickedButtonProps {
+  interface Props extends PluckedButtonProps {
     children: Snippet;
     icon: Snippet;
   }

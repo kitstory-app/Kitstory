@@ -11,15 +11,14 @@
 @custom-variant dark (&:where(html.dark *), @media (prefers-color-scheme:dark));
 
 @theme {
-  --font-body: "Inter",
-  var(--default-font-family);
-  --font-mono: "Azeret Mono",
-  var(--default-mono-font-family);
+  --font-heading: "Instrument Sans", var(--default-font-family);
+  --font-body: "Inter", var(--default-font-family);
+  --font-mono: "Azeret Mono", var(--default-mono-font-family);
 }
 
 @layer base {
   body {
-    @apply font-body overflow-x-hidden antialiased;
+    @apply scheme-light-dark font-body overflow-x-hidden antialiased text-sm dark:bg-neutral-950 bg-neutral-100 dark:text-white;
   }
 
   code {

@@ -14,7 +14,7 @@
     PanelRight,
     PanelLeftDashed,
   } from "@lucide/svelte";
-  import { sidebarToggle } from "@kitstory/shared/context";
+  import { sidebarToggle } from "@kitstory/ui/context";
 
   interface Props {
     children: Snippet;

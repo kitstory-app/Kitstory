@@ -5,3 +5,4 @@ import Section from "./components/layouts/Section.svelte"
 import WikiEditor from "./components/WikiEditor.svelte"
 
 export { Button, Clamp, DialogueTextbox, Section, WikiEditor }
+export type { WithChildrenSnippet } from "./types"
