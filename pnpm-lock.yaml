@@ -93,21 +93,39 @@ importers:
       '@tauri-apps/api':
         specifier: ^2
         version: 2.8.0
+      '@tauri-apps/plugin-autostart':
+        specifier: ~2
+        version: 2.5.1
       '@tauri-apps/plugin-clipboard-manager':
-        specifier: ~2.3.0
+        specifier: ~2
         version: 2.3.0
       '@tauri-apps/plugin-dialog':
         specifier: ~2.3.3
         version: 2.3.3
+      '@tauri-apps/plugin-fs':
+        specifier: ~2.4.5
+        version: 2.4.5
+      '@tauri-apps/plugin-http':
+        specifier: ~2.5.7
+        version: 2.5.7
       '@tauri-apps/plugin-notification':
-        specifier: ~2.3.1
+        specifier: ~2
         version: 2.3.1
       '@tauri-apps/plugin-opener':
         specifier: ^2
         version: 2.5.0
+      '@tauri-apps/plugin-os':
+        specifier: ~2.3.2
+        version: 2.3.2
       '@tauri-apps/plugin-positioner':
         specifier: ~2.3.0
         version: 2.3.0
+      '@tauri-apps/plugin-updater':
+        specifier: ~2.10.0
+        version: 2.10.0
+      '@tauri-apps/plugin-websocket':
+        specifier: ~2.4.2
+        version: 2.4.2
       tailwindcss:
         specifier: ^4
         version: 4.1.12
@@ -1401,6 +1419,9 @@ packages:
     peerDependencies:
       vite: ^5.2.0 || ^6 || ^7
 
+  '@tauri-apps/api@2.10.1':
+    resolution: {integrity: sha512-hKL/jWf293UDSUN09rR69hrToyIXBb8CjGaWC7gfinvnQrBVvnLr08FeFi38gxtugAVyVcTa5/FD/Xnkb1siBw==}
+
   '@tauri-apps/api@2.8.0':
     resolution: {integrity: sha512-ga7zdhbS2GXOMTIZRT0mYjKJtR9fivsXzsyq5U3vjDL0s6DTMwYRm0UHNjzTY5dh4+LSC68Sm/7WEiimbQNYlw==}
 
@@ -1480,11 +1501,20 @@ packages:
     engines: {node: '>= 10'}
     hasBin: true
 
+  '@tauri-apps/plugin-autostart@2.5.1':
+    resolution: {integrity: sha512-zS/xx7yzveCcotkA+8TqkI2lysmG2wvQXv2HGAVExITmnFfHAdj1arGsbbfs3o6EktRHf6l34pJxc3YGG2mg7w==}
+
   '@tauri-apps/plugin-clipboard-manager@2.3.0':
     resolution: {integrity: sha512-81NOBA2P+OTY8RLkBwyl9ZR/0CeggLub4F6zxcxUIfFOAqtky7J61+K/MkH2SC1FMxNBxrX0swDuKvkjkHadlA==}
 
   '@tauri-apps/plugin-dialog@2.3.3':
     resolution: {integrity: sha512-cWXB9QJDbLIA0v7I5QY183awazBEQNPhp19iPvrMZoJRX8SbFkhWFx1/q7zy7xGpXXzxz29qtq6z21Ho7W5Iew==}
+
+  '@tauri-apps/plugin-fs@2.4.5':
+    resolution: {integrity: sha512-dVxWWGE6VrOxC7/jlhyE+ON/Cc2REJlM35R3PJX3UvFw2XwYhLGQVAIyrehenDdKjotipjYEVc4YjOl3qq90fA==}
+
+  '@tauri-apps/plugin-http@2.5.7':
+    resolution: {integrity: sha512-+F2lEH/c9b0zSsOXKq+5hZNcd9F4IIKCK1T17RqMwpCmVnx2aoqY8yIBccCd25HTYUb3j6NPVbRax/m00hKG8A==}
 
   '@tauri-apps/plugin-notification@2.3.1':
     resolution: {integrity: sha512-7gqgfANSREKhh35fY1L4j3TUjUdePmU735FYDqRGeIf8nMXWpcx6j4FhN9/4nYz+m0mv79DCTPLqIPTySggGgg==}
@@ -1492,8 +1522,17 @@ packages:
   '@tauri-apps/plugin-opener@2.5.0':
     resolution: {integrity: sha512-B0LShOYae4CZjN8leiNDbnfjSrTwoZakqKaWpfoH6nXiJwt6Rgj6RnVIffG3DoJiKsffRhMkjmBV9VeilSb4TA==}
 
+  '@tauri-apps/plugin-os@2.3.2':
+    resolution: {integrity: sha512-n+nXWeuSeF9wcEsSPmRnBEGrRgOy6jjkSU+UVCOV8YUGKb2erhDOxis7IqRXiRVHhY8XMKks00BJ0OAdkpf6+A==}
+
   '@tauri-apps/plugin-positioner@2.3.0':
     resolution: {integrity: sha512-YMRcvA+WcULnAS+UjqGLP9ekWAgmBCgvkzT2OTkE8TWcu9jVo/Z79K0nEJhDuhZO/O0b77X0Opd+wDkEDYPeDw==}
+
+  '@tauri-apps/plugin-updater@2.10.0':
+    resolution: {integrity: sha512-ljN8jPlnT0aSn8ecYhuBib84alxfMx6Hc8vJSKMJyzGbTPFZAC44T2I1QNFZssgWKrAlofvJqCC6Rr472JWfkQ==}
+
+  '@tauri-apps/plugin-websocket@2.4.2':
+    resolution: {integrity: sha512-B1/csKPwJH9kLduNoqWFUdCsTgCvLM84T5ZZYK35jeBc9m2cm2m2G/hbSr28ZpVOZrl0x24fCWFe/9rpp7WETw==}
 
   '@tybys/wasm-util@0.10.1':
     resolution: {integrity: sha512-9tTaPJLSiejZKx+Bmog4uSubteqTvFrVrURwkmHixBo0G4seD0zUxp98E1DzUBJxLQ3NPwXrGKDiVjwx/DpPsg==}
@@ -4143,6 +4182,8 @@ snapshots:
       tailwindcss: 4.1.12
       vite: 7.1.3(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.1)(terser@5.44.1)
 
+  '@tauri-apps/api@2.10.1': {}
+
   '@tauri-apps/api@2.8.0': {}
 
   '@tauri-apps/cli-darwin-arm64@2.8.1':
@@ -4192,6 +4233,10 @@ snapshots:
       '@tauri-apps/cli-win32-ia32-msvc': 2.8.1
       '@tauri-apps/cli-win32-x64-msvc': 2.8.1
 
+  '@tauri-apps/plugin-autostart@2.5.1':
+    dependencies:
+      '@tauri-apps/api': 2.10.1
+
   '@tauri-apps/plugin-clipboard-manager@2.3.0':
     dependencies:
       '@tauri-apps/api': 2.8.0
@@ -4199,6 +4244,14 @@ snapshots:
   '@tauri-apps/plugin-dialog@2.3.3':
     dependencies:
       '@tauri-apps/api': 2.8.0
+
+  '@tauri-apps/plugin-fs@2.4.5':
+    dependencies:
+      '@tauri-apps/api': 2.10.1
+
+  '@tauri-apps/plugin-http@2.5.7':
+    dependencies:
+      '@tauri-apps/api': 2.10.1
 
   '@tauri-apps/plugin-notification@2.3.1':
     dependencies:
@@ -4208,9 +4261,21 @@ snapshots:
     dependencies:
       '@tauri-apps/api': 2.8.0
 
+  '@tauri-apps/plugin-os@2.3.2':
+    dependencies:
+      '@tauri-apps/api': 2.10.1
+
   '@tauri-apps/plugin-positioner@2.3.0':
     dependencies:
       '@tauri-apps/api': 2.8.0
+
+  '@tauri-apps/plugin-updater@2.10.0':
+    dependencies:
+      '@tauri-apps/api': 2.10.1
+
+  '@tauri-apps/plugin-websocket@2.4.2':
+    dependencies:
+      '@tauri-apps/api': 2.10.1
 
   '@tybys/wasm-util@0.10.1':
     dependencies:

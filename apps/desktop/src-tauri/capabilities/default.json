@@ -23,6 +23,7 @@
     "opener:default",
     "dialog:default",
     "notification:default",
-    "clipboard-manager:default"
+    "clipboard-manager:default",
+    "deep-link:default"
   ]
 }
